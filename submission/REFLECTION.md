@@ -68,6 +68,18 @@ Q4_K_M có TTFT P50 nhanh hơn (76ms vs 133ms) và P95 thấp hơn nhiều (920m
 
 Server xử lý 22 requests (10 users) và 23 requests (50 users) trong 1 phút. 0 failures. Bottleneck chính là small model (0.5B) + integrated GPU — requests queue lên dẫn đến P95 cao (25–49s).
 
+**Prometheus /metrics (optional extra):** Chạy llama-server với `--metrics`, scrape `/metrics` endpoint trong 3 phase (idle → 4 concurrent requests → cool down):
+
+| Metric | Idle | Under Load | Δ |
+|---|---|---|---|
+| `prompt_tokens_seconds` | 155 t/s | 86 t/s | -69 |
+| `predicted_tokens_seconds` | 25.5 t/s | 29.3 t/s | +3.8 |
+| `n_busy_slots_per_decode` | 3.75 | 1.91 | -1.84 |
+| `requests_deferred` | 0 | 0 | 0 |
+| `n_tokens_max` | 139 | 139 | 0 |
+
+0 requests deferred, KV cache đủ. Throughput prompt giảm 44% dưới tải (155→86 t/s) do chia sẻ GPU bandwidth giữa các slots. Screenshot: `08-prometheus-metrics.png`.
+
 ---
 
 ## 4. Track 03 — Milestone integration
