@@ -1,0 +1,36 @@
+{
+  "primary": {
+    "label": "primary (Q4_K_M)",
+    "model_path": "models/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "n_threads": 12,
+    "n_ctx": 2048,
+    "n_batch": 512,
+    "n_gpu_layers": 99,
+    "load_ms": 474.8,
+    "ttft_ms_p50": 76.0,
+    "ttft_ms_p95": 920.1,
+    "tpot_ms_p50": 23.3,
+    "tpot_ms_p95": 26.21,
+    "e2e_ms_p50": 1542.2,
+    "e2e_ms_p95": 2571.4,
+    "e2e_ms_p99": 2793.5,
+    "decode_rate_tok_s": 42.9
+  },
+  "compare": {
+    "label": "compare (Q2_K)",
+    "model_path": "models/qwen2.5-0.5b-instruct-q2_k.gguf",
+    "n_threads": 12,
+    "n_ctx": 2048,
+    "n_batch": 512,
+    "n_gpu_layers": 99,
+    "load_ms": 342.8,
+    "ttft_ms_p50": 133.4,
+    "ttft_ms_p95": 1733.4,
+    "tpot_ms_p50": 22.71,
+    "tpot_ms_p95": 22.88,
+    "e2e_ms_p50": 1566.4,
+    "e2e_ms_p95": 3155.9,
+    "e2e_ms_p99": 4004.3,
+    "decode_rate_tok_s": 44.0
+  }
+}

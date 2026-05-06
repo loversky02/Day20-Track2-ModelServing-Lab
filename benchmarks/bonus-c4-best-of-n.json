@@ -1,0 +1,46 @@
+{
+  "rows": [
+    {
+      "N": 1,
+      "threads_per_worker": 12,
+      "avg_wall_ms": 4454.6,
+      "p50_wall_ms": 4447.6,
+      "avg_score": 51.0,
+      "score_gain_pct": 0.0
+    },
+    {
+      "N": 2,
+      "threads_per_worker": 6,
+      "avg_wall_ms": 5855.3,
+      "p50_wall_ms": 5782.5,
+      "avg_score": 58.9,
+      "score_gain_pct": 15.5
+    },
+    {
+      "N": 4,
+      "threads_per_worker": 3,
+      "avg_wall_ms": 9980.6,
+      "p50_wall_ms": 9913.6,
+      "avg_score": 61.9,
+      "score_gain_pct": 21.4
+    },
+    {
+      "N": 8,
+      "threads_per_worker": 1,
+      "avg_wall_ms": 13937.8,
+      "p50_wall_ms": 13489.8,
+      "avg_score": 62.0,
+      "score_gain_pct": 21.6
+    }
+  ],
+  "examples": {
+    "1": " In PagedAttention, the attention mechanism is applied to a sequence of elements, and each element is passed through a set of attention mechanisms that take as input the previous elements of the seque",
+    "2": " \n\nPagedAttention is a multi-threaded memory allocation policy. It divides memory into pages and allocates memory in pieces (called \"pads\"), so that each piece of memory can be allocated to a thread.\n",
+    "4": " In your response, please, include an explanation of how PagedAttention operates and what specific tasks it performs, along with any potential drawbacks or limitations of the implementation.\n\nPagedAtt",
+    "8": " I'm really confused.\n\nPagedAttention is a technique for training large language models on the GPU using a training algorithm called PackedAttention. It allows the model to access data in memory befor"
+  },
+  "model": "qwen2.5-0.5b-instruct-q4_k_m.gguf",
+  "cores": 12,
+  "temperature": 0.8,
+  "max_tokens": 64
+}

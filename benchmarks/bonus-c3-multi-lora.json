@@ -1,0 +1,59 @@
+[
+  {
+    "scenario": "baseline (no LoRA)",
+    "lora_config": "[]",
+    "total_requests": 30,
+    "errors": 0,
+    "ttft_p50_ms": 295.2,
+    "ttft_p95_ms": 378.3,
+    "ttft_mean_ms": 260.2,
+    "tpot_p50_ms": 122.6,
+    "tpot_mean_ms": 124.7,
+    "total_p50_ms": 2824.9,
+    "total_mean_ms": 3999.7,
+    "avg_tokens": 31.6
+  },
+  {
+    "scenario": "lora-0 (pubmedqa)",
+    "lora_config": "[{'id': 0, 'scale': 1.0}]",
+    "total_requests": 30,
+    "errors": 0,
+    "ttft_p50_ms": 118.8,
+    "ttft_p95_ms": 311.4,
+    "ttft_mean_ms": 175.9,
+    "tpot_p50_ms": 91.5,
+    "tpot_mean_ms": 91.6,
+    "total_p50_ms": 3067.0,
+    "total_mean_ms": 3347.0,
+    "avg_tokens": 36.9
+  },
+  {
+    "scenario": "lora-1 (chatbot)",
+    "lora_config": "[{'id': 1, 'scale': 1.0}]",
+    "total_requests": 30,
+    "errors": 0,
+    "ttft_p50_ms": 140.1,
+    "ttft_p95_ms": 1386.2,
+    "ttft_mean_ms": 312.3,
+    "tpot_p50_ms": 108.3,
+    "tpot_mean_ms": 115.6,
+    "total_p50_ms": 2298.7,
+    "total_mean_ms": 3944.5,
+    "avg_tokens": 32.6
+  },
+  {
+    "scenario": "alternating (switching cost)",
+    "lora_config": "cycling [none, lora-0, lora-1]",
+    "total_requests": 90,
+    "errors": 0,
+    "adapter_switches": 8,
+    "ttft_p50_ms": 125.2,
+    "ttft_p95_ms": 1201.5,
+    "ttft_mean_ms": 275.9,
+    "tpot_p50_ms": 100.7,
+    "tpot_mean_ms": 99.2,
+    "total_p50_ms": 3046.9,
+    "total_mean_ms": 3802.0,
+    "avg_tokens": 37.0
+  }
+]
